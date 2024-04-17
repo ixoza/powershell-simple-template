@@ -4,8 +4,6 @@
 #   Version : 
 #   ---------------------------
 
-#>
-
 #   Vars
 $infoLog = "[INFO] $(Get-Date -Format 'HH:mm:ss')"
 $errorLog = "[ERROR] $(Get-Date -Format 'HH:mm:ss')"
