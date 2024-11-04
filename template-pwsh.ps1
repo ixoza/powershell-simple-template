@@ -23,7 +23,7 @@ function logWarn {
     return $date
 }
 
-#    Use redirect like if you want to log in a file
+#    Use redirect like ">" if you want to log in a file
 #    Define a log file in current directory
 #    $logFile = ./log.txt
 #    Write-Output "*some log*" >> $logFile
