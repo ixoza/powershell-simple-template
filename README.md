@@ -1,3 +1,5 @@
-# What is this
+Template PowerShell Script
+This repository contains a template PowerShell script with basic logging functionality.
 
-A powershell tamplate
+Description
+This script provides a basic structure for PowerShell scripts, including functions for logging information, errors, and warnings. It also includes example usage of these logging functions.
