@@ -1,33 +1,39 @@
-#                    /!\    Careful with AVs    /!\
-#                installs latest version of powershell
+#                       ⚠️ Careful with AVs ⚠️
+#              ↓ install latest version of powershell ↓
 #    iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
+#
 #   ---------------------------
 #   Made by : 
 #   Start dete : 
 #   Version : 
 #   Description : 
+#   Usage :
 #   ---------------------------
 
-#   Vars
-
 function logInfo {
-    $date = "[LOG] [INFO] $(Get-Date -Format 'HH:mm:ss')"
-    return $date
-}
-function logError {
-    $date = "[LOG] [ERROR] $(Get-Date -Format 'HH:mm:ss')"
-    return $date
+    param (
+        [string]$message
+    )
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Write-Output "[INFO] $timestamp $message" >> $logFile
 }
 function logWarn {
-    $date = "[LOG] [WARN] $(Get-Date -Format 'HH:mm:ss')"
-    return $date
+    param (
+        [string]$message
+    )
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Write-Output "[WARNING] $timestamp $message" >> $logFile
+}
+function logError {
+    param (
+        [string]$message
+    )
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Write-Output "[ERROR] $timestamp $message" >> $logFile
 }
 
-#    Use redirect like ">" if you want to log in a file
-#    Define a log file in current directory
-#    $logFile = ./log.txt
-#    Write-Output "*some log*" >> $logFile
+logInfo "Running from: $(Get-Location)"
+logInfo "My pwsh version is: $($PSVersionTable.PSVersion)"
+logInfo "Running on: $(hostname)"
 
-Write-Output "$(logInfo) Running from: $(Get-Location)"
-Write-Output "$(logInfo) My pwsh version is: $($PSVersionTable.PSVersion)"
-Write-Output "$(logInfo) My hostname: $(hostname)"
+# ur code here 
